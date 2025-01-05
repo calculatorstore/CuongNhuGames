@@ -1,0 +1,75 @@
+<html>
+<head>
+  <script src="CodeOfEthics_JSON.js" defer></script>
+  <script defer>
+
+function checkTenet(Number){
+    var tenetText = codeOfEthicsData.find(c => c.Name === ("Tenet #"+Number)).Text
+    var inputObj = document.getElementById("tenet" + Number)
+    var statusObj = document.getElementById("status" + Number)
+
+    statusObj.innerText = "?/" + tenetText.length
+
+    while (! tenetText.toLowerCase().startsWith( inputObj.value.toLowerCase() )) {
+      inputObj.value = inputObj.value.substring(0,inputObj.value.length -1)
+    }
+
+    inputObj.value = tenetText.substring(0,inputObj.value.length)
+    if (tenetText.length > inputObj.value.length) {
+      remaining =  tenetText.substring(inputObj.value.length).match(/^[^a-zA-Z]+/)
+      if (remaining){
+        inputObj.value += remaining[0] 
+      }
+    }
+    statusObj.innerText = inputObj.value.length + "/" + tenetText.length
+    if (inputObj.value.length == tenetText.length){
+      statusObj.innerHTML = statusObj.innerHTML + "&check;"
+    }
+}
+function loadTenets(){
+  checkTenet(1);
+  checkTenet(2);
+  checkTenet(3);
+  checkTenet(4);
+  checkTenet(5);
+  checkTenet(6);
+  checkTenet(7);
+  checkTenet(8);
+}
+  </script>
+</head>
+<body onload="loadTenets()">
+<h1>Cuong Nhu Validation test</h1>
+<label for="Tenet1">Tenet 1:</label>
+<textarea id="tenet1" onkeypress="checkTenet(1)" onkeyup="checkTenet(1)" style="width:600px;height:50px;"></textarea>
+<span id ="status1">placeholder1</span><br>
+
+<label for="Tenet2">Tenet 2:</label>
+<textarea id="tenet2" onkeypress="checkTenet(2)" onkeyup="checkTenet(2)" style="width:600px;height:50px;"></textarea>
+<span id ="status2"></span><br>
+
+<label for="Tenet3">Tenet 3:</label>
+<textarea id="tenet3" onkeypress="checkTenet(3)" onkeyup="checkTenet(3)" style="width:600px;height:50px;"></textarea>
+<span id ="status3"></span><br>
+
+<label for="Tenet4">Tenet 4:</label>
+<textarea id="tenet4" onkeypress="checkTenet(4)" onkeyup="checkTenet(4)" style="width:600px;height:50px;"></textarea>
+<span id ="status4"></span><br>
+
+<label for="Tenet5">Tenet 5:</label>
+<textarea id="tenet5" onkeypress="checkTenet(5)" onkeyup="checkTenet(5)" style="width:600px;height:50px;"></textarea>
+<span id ="status5"></span><br>
+
+<label for="Tenet6">Tenet 6:</label>
+<textarea id="tenet6" onkeypress="checkTenet(6)" onkeyup="checkTenet(6)" style="width:600px;height:50px;"></textarea>
+<span id ="status6"></span><br>
+
+<label for="Tenet7">Tenet 7:</label>
+<textarea id="tenet7" onkeypress="checkTenet(7)" onkeyup="checkTenet(7)" style="width:600px;height:50px;"></textarea>
+<span id ="status7"></span><br>
+
+<label for="Tenet8">Tenet 8:</label>
+<textarea id="tenet8" onkeypress="checkTenet(8)" onkeyup="checkTenet(8)" style="width:600px;height:50px;"></textarea>
+<span id ="status8"></span><br>
+</body>
+</html>
