@@ -24,6 +24,11 @@ function checkTenet(Number){
     statusObj.innerText = inputObj.value.length + "/" + tenetText.length
     if (inputObj.value.length == tenetText.length){
       statusObj.innerHTML = statusObj.innerHTML + "&check;"
+      inputObj.readOnly = true
+      inputObj.disabled = true
+      inputObj.style.backgroundColor = "Chartreuse"
+      inputObj.style.color = "Black"
+      statusObj.style.color = "Green"
     }
 }
 function loadTenets(){
@@ -45,7 +50,7 @@ function loadTenets(){
 <span id ="status1">placeholder1</span><br>
 
 <label for="Tenet2">Tenet 2:</label>
-<textarea id="tenet2" onkeypress="checkTenet(2)" onkeyup="checkTenet(2)" style="width:600px;height:50px;"></textarea>
+<textarea id="tenet2" onkeypress="checkTenet(2)" onkeyup="checkTenet(2)" style="width:600px;height:75px;"></textarea>
 <span id ="status2"></span><br>
 
 <label for="Tenet3">Tenet 3:</label>
