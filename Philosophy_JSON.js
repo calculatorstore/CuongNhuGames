@@ -1,3 +1,4 @@
+console.log("loading philosophy data")
 const philosophyData = [
   {
     Tags: [],
@@ -350,7 +351,7 @@ const philosophyData = [
   },
   {
     Tags: ["Leadership"],
-    Name: "Ten “Nesses” of Leadership",
+    Name: "Ten 'Nesses' of Leadership",
     List: [
       "Fitness - Health",
       "Wellness - Health",
@@ -433,7 +434,7 @@ const philosophyData = [
   },
   {
     Tags: ["Teaching"],
-    Name: "Twelve “Tions” for Teaching",
+    Name: "Twelve 'Tions' for Teaching",
     List: [
       "Communication",
       "Simplification",

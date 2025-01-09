@@ -54,13 +54,14 @@ function checkTenet(Number){
     var tenetData = codeOfEthicsData.find(c => c.Name === ("Tenet #"+Number))
     var tenetText = tenetData.Text
     var tenetExplanation = tenetData.Explanation
+    var collapseTextObj = document.getElementById("collapseText" + Number)
     var inputObj = document.getElementById("tenet" + Number)
     var explanationObj = document.getElementById("explanation" + Number)
     var statusObj = document.getElementById("status" + Number)
     var tooltipContainerObj = document.getElementById("tooltipContainer" + Number)    
     var tooltipObj = document.getElementById("tooltip" + Number)
 
-    explanationObj.value = tenetExplanation
+    collapseTextObj.value = tenetExplanation
     statusObj.innerText = "?/" + tenetText.length
 
     while (! tenetText.toLowerCase().startsWith( inputObj.value.toLowerCase() )) {
@@ -152,7 +153,20 @@ function resetGame() {
   });
 }
 
+function expandcollapse(Number) {
+  console.log("Expand/Collapse " + Number);
+  var collapseButtonObj = document.getElementById("collapseButton" + Number)
+  var collapseTextObj = document.getElementById("collapseText" + Number)
 
+  if (collapseButtonObj.innerText == "Show Explanation..."){
+    collapseButtonObj.innerText = "Hide Explanation..."
+    collapseTextObj.style.display = "block"
+  } else {
+    collapseButtonObj.innerText = "Show Explanation..."
+    collapseTextObj.style.display = "none"
+  }
+
+}
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -188,95 +202,120 @@ transition: opacity 0.4s ease;">
   </div>
 </div>
 <form autocomplete="off" method="post" action="">
-<label for="tenet1">Tenet 1: </label>
-<span id ="status1">placeholder1</span>
-<span class="tooltip" id="tooltipContainer1">
-  <i class="fa fa-question-circle"></i>
-  Hint
-  <span class="tooltiptext" id ="tooltip1">Tooltip text</span> 
-  </span>
-<br>
-<textarea id="tenet1" rows="4" oninput="checkTenet(1)" style="width:100%;" autocomplete="new-password"></textarea><br>
-<textarea id="explanation1" rows="4" readonly="true" disabled="true" style="width:100%; display:none;"></textarea><br>
 
-<label for="tenet2">Tenet 2: </label>
-<span id ="status2"></span>
-<span class="tooltip" id="tooltipContainer2">
-  <i class="fa fa-question-circle"></i>
-  Hint
-  <span class="tooltiptext" id ="tooltip2">Tooltip text</span> 
-  </span>
-<br>
-<textarea id="tenet2" rows="4" oninput="checkTenet(2)" style="width:100%;" autocomplete="new-password"></textarea><br>
-<textarea id="explanation2" rows="4" readonly="true" disabled="true" style="width:100%; display:none;"></textarea><br>
+  <label for="tenet1">Tenet 1: </label>
+  <span id ="status1">placeholder1</span>
+  <span class="tooltip" id="tooltipContainer1">
+    <i class="fa fa-question-circle"></i>
+    Hint
+    <span class="tooltiptext" id ="tooltip1">Tooltip text</span> 
+    </span>
+  <br>
+  <textarea id="tenet1" rows="4" oninput="checkTenet(1)" style="width:100%;resize:none" autocomplete="new-password"></textarea><br>
+  <span id="explanation1" style="width:100%; display:none;">
+    <button type="button" id="collapseButton1" onclick="expandcollapse(1)">Show Explanation...</button><br>
+    <textarea id = "collapseText1" rows="4" readonly="true" disabled="true" style="width:100%; resize:none; display:none; background-color:lightgray; color:black;"></textarea>
+  </span><br>
 
-<label for="tenet3">Tenet 3: </label>
-<span id ="status3"></span>
-<span class="tooltip" id="tooltipContainer3">
-  <i class="fa fa-question-circle"></i>
-  Hint
-  <span class="tooltiptext" id ="tooltip3">Tooltip text</span> 
-  </span>
-<br>
-<textarea id="tenet3" rows="4" oninput="checkTenet(3)" style="width:100%;" autocomplete="new-password"></textarea><br>
-<textarea id="explanation3" rows="4" readonly="true" disabled="true" style="width:100%; display:none;"></textarea><br>
+  <label for="tenet2">Tenet 2: </label>
+  <span id ="status2">placeholder2</span>
+  <span class="tooltip" id="tooltipContainer2">
+    <i class="fa fa-question-circle"></i>
+    Hint
+    <span class="tooltiptext" id ="tooltip2">Tooltip text</span> 
+    </span>
+  <br>
+  <textarea id="tenet2" rows="4" oninput="checkTenet(2)" style="width:100%;resize:none" autocomplete="new-password"></textarea><br>
+  <span id="explanation2" style="width:100%; display:none;">
+    <button type="button" id="collapseButton2" onclick="expandcollapse(2)">Show Explanation...</button><br>
+    <textarea id = "collapseText2" rows="4" readonly="true" disabled="true" style="width:100%; resize:none; display:none; background-color:lightgray; color:black;"></textarea>
+  </span><br>
 
-<label for="tenet4">Tenet 4: </label>
-<span id ="status4"></span>
-<span class="tooltip" id="tooltipContainer4">
-  <i class="fa fa-question-circle"></i>
-  Hint
-  <span class="tooltiptext" id ="tooltip4">Tooltip text</span> 
-  </span>
-<br>
-<textarea id="tenet4" rows="4" oninput="checkTenet(4)" style="width:100%;" autocomplete="new-password"></textarea><br>
-<textarea id="explanation4" rows="4" readonly="true" disabled="true" style="width:100%; display:none;"></textarea><br>
+  <label for="tenet3">Tenet 3: </label>
+  <span id ="status3">placeholder3</span>
+  <span class="tooltip" id="tooltipContainer3">
+    <i class="fa fa-question-circle"></i>
+    Hint
+    <span class="tooltiptext" id ="tooltip3">Tooltip text</span> 
+    </span>
+  <br>
+  <textarea id="tenet3" rows="4" oninput="checkTenet(3)" style="width:100%;resize:none" autocomplete="new-password"></textarea><br>
+  <span id="explanation3" style="width:100%; display:none;">
+    <button type="button" id="collapseButton3" onclick="expandcollapse(3)">Show Explanation...</button><br>
+    <textarea id = "collapseText3" rows="4" readonly="true" disabled="true" style="width:100%; resize:none; display:none; background-color:lightgray; color:black;"></textarea>
+  </span><br>
 
-<label for="tenet5">Tenet 5: </label>
-<span id ="status5"></span>
-<span class="tooltip" id="tooltipContainer5">
-  <i class="fa fa-question-circle"></i>
-  Hint
-  <span class="tooltiptext" id ="tooltip5">Tooltip text</span> 
-  </span>
-<br>
-<textarea id="tenet5" rows="4" oninput="checkTenet(5)" style="width:100%;" autocomplete="new-password"></textarea><br>
-<textarea id="explanation5" rows="4" readonly="true" disabled="true" style="width:100%; display:none;"></textarea><br>
+  <label for="tenet4">Tenet 4: </label>
+  <span id ="status4">placeholder4</span>
+  <span class="tooltip" id="tooltipContainer4">
+    <i class="fa fa-question-circle"></i>
+    Hint
+    <span class="tooltiptext" id ="tooltip4">Tooltip text</span> 
+    </span>
+  <br>
+  <textarea id="tenet4" rows="4" oninput="checkTenet(4)" style="width:100%;resize:none" autocomplete="new-password"></textarea><br>
+  <span id="explanation4" style="width:100%; display:none;">
+    <button type="button" id="collapseButton4" onclick="expandcollapse(4)">Show Explanation...</button><br>
+    <textarea id = "collapseText4" rows="4" readonly="true" disabled="true" style="width:100%; resize:none; display:none; background-color:lightgray; color:black;"></textarea>
+  </span><br>
 
-<label for="tenet6">Tenet 6: </label>
-<span id ="status6"></span>
-<span class="tooltip" id="tooltipContainer6">
-  <i class="fa fa-question-circle"></i>
-  Hint
-  <span class="tooltiptext" id ="tooltip6">Tooltip text</span> 
-  </span>
-<br>
-<textarea id="tenet6" rows="4" oninput="checkTenet(6)" style="width:100%;" autocomplete="new-password"></textarea><br>
-<textarea id="explanation6" rows="4" readonly="true" disabled="true" style="width:100%; display:none;"></textarea><br>
+  <label for="tenet5">Tenet 5: </label>
+  <span id ="status5">placeholder5</span>
+  <span class="tooltip" id="tooltipContainer5">
+    <i class="fa fa-question-circle"></i>
+    Hint
+    <span class="tooltiptext" id ="tooltip5">Tooltip text</span> 
+    </span>
+  <br>
+  <textarea id="tenet5" rows="4" oninput="checkTenet(5)" style="width:100%;resize:none" autocomplete="new-password"></textarea><br>
+  <span id="explanation5" style="width:100%; display:none;">
+    <button type="button" id="collapseButton5" onclick="expandcollapse(5)">Show Explanation...</button><br>
+    <textarea id = "collapseText5" rows="4" readonly="true" disabled="true" style="width:100%; resize:none; display:none; background-color:lightgray; color:black;"></textarea>
+  </span><br>
 
-<label for="tenet7">Tenet 7: </label>
-<span id ="status7"></span>
-<span class="tooltip" id="tooltipContainer7">
-  <i class="fa fa-question-circle"></i>
-  Hint
-  <span class="tooltiptext" id ="tooltip7">Tooltip text</span> 
-  </span>
-<br>
-<textarea id="tenet7" rows="4" oninput="checkTenet(7)" style="width:100%;" autocomplete="new-password"></textarea><br>
-<textarea id="explanation7" rows="4" readonly="true" disabled="true" style="width:100%; display:none;"></textarea><br>
+  <label for="tenet6">Tenet 6: </label>
+  <span id ="status6">placeholder6</span>
+  <span class="tooltip" id="tooltipContainer6">
+    <i class="fa fa-question-circle"></i>
+    Hint
+    <span class="tooltiptext" id ="tooltip6">Tooltip text</span> 
+    </span>
+  <br>
+  <textarea id="tenet6" rows="4" oninput="checkTenet(6)" style="width:100%;resize:none" autocomplete="new-password"></textarea><br>
+  <span id="explanation6" style="width:100%; display:none;">
+    <button type="button" id="collapseButton6" onclick="expandcollapse(6)">Show Explanation...</button><br>
+    <textarea id = "collapseText6" rows="4" readonly="true" disabled="true" style="width:100%; resize:none; display:none; background-color:lightgray; color:black;"></textarea>
+  </span><br>
 
-<label for="tenet8">Tenet 8: </label>
-<span id ="status8"></span>
-<span class="tooltip" id="tooltipContainer8">
-  <i class="fa fa-question-circle"></i>
-  Hint
-  <span class="tooltiptext" id ="tooltip8">Tooltip text</span> 
-  </span>
-<br>
-<textarea id="tenet8" rows="4" oninput="checkTenet(8)" style="width:100%;" autocomplete="new-password"></textarea><br>
-<textarea id="explanation8" rows="4" readonly="true" disabled="true" style="width:100%; display:none;"></textarea><br>
+  <label for="tenet7">Tenet 7: </label>
+  <span id ="status7">placeholder7</span>
+  <span class="tooltip" id="tooltipContainer7">
+    <i class="fa fa-question-circle"></i>
+    Hint
+    <span class="tooltiptext" id ="tooltip7">Tooltip text</span> 
+    </span>
+  <br>
+  <textarea id="tenet7" rows="4" oninput="checkTenet(7)" style="width:100%;resize:none" autocomplete="new-password"></textarea><br>
+  <span id="explanation7" style="width:100%; display:none;">
+    <button type="button" id="collapseButton7" onclick="expandcollapse(7)">Show Explanation...</button><br>
+    <textarea id = "collapseText7" rows="4" readonly="true" disabled="true" style="width:100%; resize:none; display:none; background-color:lightgray; color:black;"></textarea>
+  </span><br>
 
-<button onclick="resetGame()">Reset</button><br>     
+  <label for="tenet8">Tenet 8: </label>
+  <span id ="status8">placeholder8</span>
+  <span class="tooltip" id="tooltipContainer8">
+    <i class="fa fa-question-circle"></i>
+    Hint
+    <span class="tooltiptext" id ="tooltip8">Tooltip text</span> 
+    </span>
+  <br>
+  <textarea id="tenet8" rows="4" oninput="checkTenet(8)" style="width:100%;resize:none" autocomplete="new-password"></textarea><br>
+  <span id="explanation8" style="width:100%; display:none;">
+    <button type="button" id="collapseButton8" onclick="expandcollapse(8)">Show Explanation...</button><br>
+    <textarea id = "collapseText8" rows="4" readonly="true" disabled="true" style="width:100%; resize:none; display:none; background-color:lightgray; color:black;"></textarea>
+  </span><br>
+
+  <button onclick="resetGame()">Reset</button><br>     
 </form>
 </body>
 </html>

@@ -1,14 +1,26 @@
 <html>
-<head></head>
-<body>
-<iframe name = "TopNavFrame" src="TopNav.html" width="100%" height="30px" style="border:none;">
+<head>
+    <style>
+        body {
+        background-color: #a1c0a0;
+        }
+    </style>
+    <script>
+        function setHeight(){
+            console.log("Setting Heights");
+            var topObj = document.getElementById("TopNavFrame")
+            var bottomObj = document.getElementById("TopNavFrame")
+            var mainObj = document.getElementById("MainFrame")
+            mainObj.height = window.innerHeight - topObj.offsetHeight - bottomObj.offsetHeight - 20
+        }
+    </script>
+</head>
+<body onload="setHeight()">
+<iframe id = "TopNavFrame" name = "TopNavFrame" src="TopNav.html" width="100%" height="50px" style="border:none;">
 </iframe>
-
-<iframe name = "MainFrame" src="sitemap.html" width="100%" height="90%" style="border:none;">
-</iframe></body>
-
-<span>
-This is a student project and not endorsed by the Cuong Nhu Martial Arts Association.
-</span>
-  
+<iframe id = "MainFrame" name = "MainFrame" src="sitemap.html" width="100%" height="1000px" style="border:none;">
+</iframe>
+<iframe id = "BottomNavFrame" name = "BottomNavFrame" src="BottomNav.html" width="100%" height="50px" style="border:none;">
+</iframe>  
+</body>
 </html>

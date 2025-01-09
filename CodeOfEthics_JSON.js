@@ -1,3 +1,6 @@
+console.log("loading COE data")
+
+
 const codeOfEthicsData = [
   {
     Name: "Tenet #1",

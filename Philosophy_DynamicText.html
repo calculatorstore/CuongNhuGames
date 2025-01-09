@@ -1,0 +1,36 @@
+<html>
+<head>
+  <script src="Philosophy_JSON.js" defer></script>
+  <script defer>
+    function renderList() {
+      philosophyList = document.getElementById("PhilosophyList")
+      philosophyData.forEach(
+        function(philosophy){
+          var listItem = document.createElement("li");
+          var heading = document.createElement("span");
+          heading.innerText = philosophy.Name;
+          listItem.appendChild(heading);
+
+          var sublist = document.createElement("ul");
+          philosophy.List.forEach(
+            function(item){
+              var sublistItem = document.createElement("li");
+              sublistItem.innerText = item
+              sublist.appendChild(sublistItem);
+            }
+          )
+          listItem.appendChild(sublist);
+
+          philosophyList.appendChild(listItem);
+        }
+      );
+    }    
+  </script>
+</head>
+<body onload="renderList();">
+<h1>
+Philosophy of Cuong Nhu Martial Arts
+</h1>
+<ul id = "PhilosophyList"></ul>
+</body>
+</html>
