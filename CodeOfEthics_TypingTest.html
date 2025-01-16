@@ -49,6 +49,20 @@
   <script src="CodeOfEthics_JSON.js" defer></script>
   <script defer>
 
+function populateOrderTooltip() {
+  console.log("populateOrderTip")
+  var orderedList = document.createElement("ol");
+ 
+  codeOfEthicsData.forEach(
+    function(tenet){
+      var listItem = document.createElement("li");
+      listItem.innerText = tenet.Summary;
+      orderedList.appendChild(listItem);
+    }
+  );
+  document.getElementById("collapseTextOrder").appendChild(orderedList)
+}
+
 function checkTenet(Number){
     console.log("Check Tenet " + Number);
     var tenetData = codeOfEthicsData.find(c => c.Name === ("Tenet #"+Number))
@@ -102,6 +116,9 @@ function checkTenet(Number){
 }
 function loadTenets(){
   console.log("Load Tenets");
+
+  populateOrderTooltip()
+
   checkTenet(1);
   checkTenet(2);
   checkTenet(3);
@@ -167,6 +184,21 @@ function expandcollapse(Number) {
   }
 
 }
+
+function expandcollapseOrder() {
+  console.log("Expand/Collapse Order");
+  var collapseButtonObj = document.getElementById("collapseButtonOrder" )
+  var collapseTextObj = document.getElementById("collapseTextOrder" )
+
+  if (collapseButtonObj.innerText == "Show Tenet Order Summary..."){
+    collapseButtonObj.innerText = "Hide Tenet Order Summary..."
+    collapseTextObj.style.display = "block"
+  } else {
+    collapseButtonObj.innerText = "Show Tenet Order Summary..."
+    collapseTextObj.style.display = "none"
+  }
+
+}
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -201,7 +233,12 @@ transition: opacity 0.4s ease;">
       <button onclick="hideVictory()">Okay</button>
   </div>
 </div>
-<form autocomplete="off" method="post" action="">
+<form autocomplete="off" method="post" action="">  
+  <span id="explanationOrder" style="width:100%;">
+    <button type="button" id="collapseButtonOrder" onclick="expandcollapseOrder()">Show Tenet Order Summary...</button><br>
+    <span id = "collapseTextOrder" style="width:100%; resize:none; display:none; background-color:lightgray; color:black;"></span>
+  </span>
+  <br>
 
   <label for="tenet1">Tenet 1: </label>
   <span id ="status1">placeholder1</span>
@@ -209,7 +246,7 @@ transition: opacity 0.4s ease;">
     <i class="fa fa-question-circle"></i>
     Hint
     <span class="tooltiptext" id ="tooltip1">Tooltip text</span> 
-    </span>
+  </span>
   <br>
   <textarea id="tenet1" rows="4" oninput="checkTenet(1)" style="width:100%;resize:none" autocomplete="new-password"></textarea><br>
   <span id="explanation1" style="width:100%; display:none;">
