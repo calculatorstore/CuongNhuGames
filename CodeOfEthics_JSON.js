@@ -41,13 +41,13 @@ const codeOfEthicsData = [
   {
     Name: "Tenet #7",
     Text: "The goal of Cuong Nhu students is to maintain a pure, simple, sincere, and noble life.",
-    Explanation: "Early in life you closely identified with these values. As you grew, the struggle to survive the pitfalls of society and bad experiences in life conspired to weaken those ideals. You must now develop a healthy resistance to cor- rupting influences so you can return to nature. Embrace a simple life by accepting and doing your best. Do not expect too much from others. If they fall short, accept their shortcomings with understanding. Strive for sincerity and nobility in your actions. Simplicity and purity make life meaningful and worthwhile.",
+    Explanation: "Early in life you closely identified with these values. As you grew, the struggle to survive the pitfalls of society and bad experiences in life conspired to weaken those ideals. You must now develop a healthy resistance to corrupting influences so you can return to nature. Embrace a simple life by accepting and doing your best. Do not expect too much from others. If they fall short, accept their shortcomings with understanding. Strive for sincerity and nobility in your actions. Simplicity and purity make life meaningful and worthwhile.",
     Summary: "Soul crystallization"
   },
   {
     Name: "Tenet #8",
     Text: "Self-confidence, self-control, modesty, and a non-defeatist attitude are the mental keynotes for students of Cuong Nhu.",
-    Explanation: "As you develop a balance within yourself and harmony with others, you build values that make you self- confident. Self-control means maintaining your emotions. If you break this balance in yourself, it can carry over in your attitude toward others. If you are modest, you become more aware and are always ready tc learn. Others will sense this, and you will gain their respect. Arrogance, on the other hand, is a weakness because it stunts your learning ability. Having a non- defeatist attitude takes courage and sacrifice. From this you overcome yourself and constantly grow through your difficulties and hardships.",
+    Explanation: "As you develop a balance within yourself and harmony with others, you build values that make you self- confident. Self-control means maintaining your emotions. If you break this balance in yourself, it can carry over in your attitude toward others. If you are modest, you become more aware and are always ready to learn. Others will sense this, and you will gain their respect. Arrogance, on the other hand, is a weakness because it stunts your learning ability. Having a non-defeatist attitude takes courage and sacrifice. From this you overcome yourself and constantly grow through your difficulties and hardships.",
     Summary: "Balance and resiliency"
   }
 ];
