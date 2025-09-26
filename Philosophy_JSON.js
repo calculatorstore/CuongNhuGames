@@ -159,7 +159,7 @@ const philosophyData = [
       "Sensei and Sempai",
       "Classmates",
       "Mirrors",
-      "Books, Media",
+      "Books and Media",
       "Tournaments",
       "Training equipment",
       "Yourself",
