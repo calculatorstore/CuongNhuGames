@@ -78,21 +78,36 @@ function checkTenet(Number){
     collapseTextObj.value = tenetExplanation
     statusObj.innerText = "?/" + tenetText.length
 
-    while (! tenetText.toLowerCase().startsWith( inputObj.value.toLowerCase() )) {
-      inputObj.value = inputObj.value.substring(0,inputObj.value.length -1);
+    var tenetTextArray = tenetText.split(/(?=[a-zA-Z0-9])/)
+    var tenetCharArray = tenetText.toLowerCase().replaceAll(/[^a-zA-Z0-9]/gi,"").split("")
+    var inputCharArray = inputObj.value.toLowerCase().replaceAll(/[^a-zA-Z0-9]/gi,"").split("")
+    var firstMismatchIndex = -1
+    var curIndex = 0
+    if (inputObj.value != "") { 
+      while (firstMismatchIndex == -1 ) {
+          if (tenetCharArray[curIndex] != inputCharArray[curIndex] || curIndex == tenetCharArray.length || curIndex == inputCharArray.length) {
+            firstMismatchIndex = curIndex
+          }
+          curIndex ++ 
+      }
+      if (firstMismatchIndex > 0){
+        inputObj.value = tenetTextArray.slice(0,firstMismatchIndex).join("");
+      } else {
+        inputObj.value = ""
+      }
     }
 
-    inputObj.value = tenetText.substring(0,inputObj.value.length)
     if (tenetText.length > inputObj.value.length) {
-      var remaining =  tenetText.substring(inputObj.value.length).match(/^[^a-zA-Z]+/)
+      var remaining =  tenetText.substring(inputObj.value.length).match(/^[^a-zA-Z0-9]+/)
       if (remaining){
         inputObj.value += remaining[0] 
       }
-      var nextWord =  tenetText.substring(inputObj.value.length).match(/^[a-zA-Z]+/)
+      var nextWord =  tenetText.substring(inputObj.value.length).match(/^[a-zA-Z0-9]+/)
       tooltipObj.innerText = nextWord
     } else {
       tooltipObj.innerText = ""
     }
+
     statusObj.innerText = inputObj.value.length + "/" + tenetText.length
     if (inputObj.value.length == tenetText.length){
       statusObj.innerHTML = statusObj.innerHTML + "&check;"
