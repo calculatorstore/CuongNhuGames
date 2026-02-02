@@ -11,54 +11,6 @@ const philosophyData = [
     Explanation: "Open Mind. As in the famous Zen story about the tea master and the philosopher, you must 'empty your cup' to make way for new understanding and stimulate your thirst for learning. Do not let preconceptions cloud your ability to receive new ideas.  Open Heart. Make the effort to show understanding, caring, and compassion toward others. Dissolve your ego.  Open Arms. Reach out to take action, work and share with others, and achieve your visions for the world.  What do the Three O's have to do with martial arts? Everything! The dojo is a microcosm of society, and of daily life. In the dojo (training hall) we strive, we struggle, and we learn to depend on each other in practicing difficult skills. We must have trust and understanding with our training partners, who may be people very different from ourselves. We cannot learn without opening our minds, and we cannot practice together without learning patience and compassion for others. In turn, the skills we practice in the dojo translate into skills for work, school, and community."
   },
   {
-    Tags: ["One Green", "Self-Defense"],
-    Name: "5 A's of Self Defense",
-    List: [
-      "Awareness",
-      "Alertness",
-      "Avoidance",
-      "Anticipation",
-      "Action"
-    ],
-    Explanation: "AWARENESS is key to self defense, without it the ability to defend ourselves is wasted, ALERTNESS is a heightened state of awareness. Do you know the difference between aware and alert? Being aware and alert will allow you to AVOID or ANTICIPATE any situation before it is too late and gives you the opportunity to use the proper ACTION. The student through daily dedicated practice can trust their instinct and act with the correct response."
-  },
-  {
-    Tags: ["One Green", "Self-Defense"],
-    Name: "Five R's for Self Defense",
-    List: [
-      "Right Perspective",
-      "Right Time",
-      "Right Place",
-      "Right Techniques",
-      "Run"
-    ],
-    Explanation: "Having the RIGHT PERSPECTIVE means to have a clear and open mind. This allows you to trust your instinct and your action will be at the RIGHT TIME. If your action is to use martial arts techniques, you must be in the RIGHT PLACE, like stepping to the side of an attack, and deliver the RIGHT TECHNIQUE, not trying to do something impractical, and hopefully allow you the opportunity to RUN and save your life."
-  },
-  {
-    Tags: ["One Green", "Self-Defense"],
-    Name: "Five W's for Self Defense/5 W's to Avoid",
-    List: [
-      "Wrong Time",
-      "Wrong Place",
-      "Wrong People",
-      "Wrong Attitude",
-      "Wrong Techniques",
-    ],
-    Explanation: "To leave your home after a fight is to go out with the WRONG ATTITUDE. You end up on the streets late at night, heading somewhere at the WRONG TIME and end up at the WRONG PLACE like a bar and hang out with the WRONG PEOPLE, strangers who are drinking, and you use the WRONG TECHNIQUE by not recognizing the fact that four of the five Ws are in place and you don't leave the situation. This is a setup for a rough time."
-  },
-  {
-    Tags: ["One Green", "Training"],
-    Name: "Five S's for Warmups",
-    List: [
-      "Safety",
-      "Slowness",
-      "Self-Awareness",
-      "Stretching",
-      "Strengthening"
-    ],
-    Explanation: ""
-  },
-  {
     Tags: ["One Green"],
     Name: "Five Firsts for Friendship",
     List: [
@@ -81,6 +33,54 @@ const philosophyData = [
       "Perform"
     ],
     Explanation: ""
+  },
+  {
+    Tags: ["One Green", "Training"],
+    Name: "Five S's for Warmups",
+    List: [
+      "Safety",
+      "Slowness",
+      "Self-Awareness",
+      "Stretching",
+      "Strengthening"
+    ],
+    Explanation: ""
+  },
+  {
+    Tags: ["One Green", "Self-Defense"],
+    Name: "Five A's for Self Defense",
+    List: [
+      "Awareness",
+      "Alertness",
+      "Avoidance",
+      "Anticipation",
+      "Action"
+    ],
+    Explanation: "AWARENESS is key to self defense, without it the ability to defend ourselves is wasted, ALERTNESS is a heightened state of awareness. Do you know the difference between aware and alert? Being aware and alert will allow you to AVOID or ANTICIPATE any situation before it is too late and gives you the opportunity to use the proper ACTION. The student through daily dedicated practice can trust their instinct and act with the correct response."
+  },
+  {
+    Tags: ["One Green", "Self-Defense"],
+    Name: "Five W's for Self Defense/5 W's to Avoid",
+    List: [
+      "Wrong Time",
+      "Wrong Place",
+      "Wrong People",
+      "Wrong Attitude",
+      "Wrong Techniques",
+    ],
+    Explanation: "To leave your home after a fight is to go out with the WRONG ATTITUDE. You end up on the streets late at night, heading somewhere at the WRONG TIME and end up at the WRONG PLACE like a bar and hang out with the WRONG PEOPLE, strangers who are drinking, and you use the WRONG TECHNIQUE by not recognizing the fact that four of the five Ws are in place and you don't leave the situation. This is a setup for a rough time."
+  },
+  {
+    Tags: ["One Green", "Self-Defense"],
+    Name: "Five R's for Self Defense",
+    List: [
+      "Right Perspective",
+      "Right Time",
+      "Right Place",
+      "Right Techniques",
+      "Run"
+    ],
+    Explanation: "Having the RIGHT PERSPECTIVE means to have a clear and open mind. This allows you to trust your instinct and your action will be at the RIGHT TIME. If your action is to use martial arts techniques, you must be in the RIGHT PLACE, like stepping to the side of an attack, and deliver the RIGHT TECHNIQUE, not trying to do something impractical, and hopefully allow you the opportunity to RUN and save your life."
   },
 
   {
@@ -108,18 +108,6 @@ const philosophyData = [
     Explanation: "Any idea or vision must start with DIRECTION in the mind, a person must be able to see and visualize where or what it is they are looking for. Every event takes time and DISCIPLINE, which enables a person to develop themselves and the vision.This in turn develops a strong DETERMINATION to continue and follow through on the commitment and develop a lifelong DEDICATION. A lifelong dedication will instill this vision into the younger generations so they too will see the vision, so you DO IT TILL YOU DIE!"
   },
   {
-    Tags: ["Two Green", "Teaching"],
-    Name: "Five F's for Learning and Teaching",
-    List: [
-      "Fun",
-      "Friendship",
-      "Focus",
-      "Fly your spirit",
-      "Finish your goal"
-    ],
-    Explanation: ""
-  },
-  {
     Tags: ["Two Green"],
     Name: "Five Think Rights (No Brain, No Gain)",
     List: [
@@ -144,6 +132,18 @@ const philosophyData = [
     Explanation: ""
   },
   {
+    Tags: ["Two Green", "Teaching"],
+    Name: "Five F's for Learning and Teaching",
+    List: [
+      "Fun",
+      "Friendship",
+      "Focus",
+      "Fly your spirit",
+      "Finish your goal"
+    ],
+    Explanation: ""
+  },
+  {
     Tags: ["Two Green"],
     Name: "Five Re's of Meditation",
     List: [
@@ -156,6 +156,32 @@ const philosophyData = [
     Explanation: ""
   },
 
+  {
+    Tags: ["Green Belt", "Martial Arts"],
+    Name: "Five Sources of Power",
+    List: [
+      "Mind",
+      "Body",
+      "Spirit",
+      "Soul",
+      "Ki"
+    ],
+    Explanation: "MIND: The mind is a very important source of power. You may have a lot of body strength, but if you doubt your ability, then you will have a hard time achieving your goal. Your positive attitude and belief that you can accomplish your goal will help you to realize it. 'Mind over matter' or 'Accomplishing the goal by a force of will' are some phrases that describe the power of the mind. BODY: Your body is an obvious source of power and strength. You can become stronger through body conditioning, weight training, and stamina-oriented exercises. SPIRIT: 'The power of a positive attitude' refers to one's spirit. If you approach things with enthusiasm and focus, you can accomplish many goals. You can also share your good spirit with others and better develop teamwork. Even when things are not going well, a strong spirit can help one overcome many obstacles. SOUL: The soul is the very private and personal essence of one's being. While the spirit is an outward expression of power and energy, the soul is an internal source of strength. Your ethics and system of principles lie within your soul, and by making decisions and facing challenges from your center of good principles, you can feel confident that you are taking the best path for you. 'A kind heart' makes reference to that person's soul and inner being. KI: Ki, Chi, and Qi refer to one's internal energy. By concentrating and focusing on relaxing the body and 'flowing' the ki, one can express power greater than 'normal' body strength. This expression of power is demonstrated by 'superhuman' acts, such as lifting a car that has rolled onto someone."
+  },
+  {
+    Tags: ["Green Belt", "Martial Arts"],    
+    Name: "Seven Martial Arts of Influence",
+    List: [
+      "Shotokan",
+      "Boxing",
+      "Judo",
+      "Aikido",
+      "Wing Chun",
+      "Tai Chi Chuan",
+      "Vovinam"
+    ],
+    Explanation: "A brief history and philosophy of the Seven Styles:  Tai Chi Chuan, the Ultimate Fist, was developed in the 1200's in China by a Taoist, Chang San Feng, who had studied Tao Yin, a Chinese breathing art. Tai Chi has had a strong influence on Cuong Nhu's soft style principles. Wing Chun Kung Fu was developed in the 1700's at the Southern Shaolin Temple in China to defend against the occupying Manchurians, but they burned the temple before the style could be taught. Abbess Ng Mui escaped and taught the style to Yim Wing Chun, whose name means 'Beautiful Springtime,' for whom the style now takes its name. It is designed to maximize effectiveness for smaller, weaker fighters vs. larger, stronger opponents. Kodokan Judo was founded by a Ju-Jitsu Master named Jigoro Kano in Japan in 1882. Kano wished to popularize his art by eliminating the more dangerous jujitsu techniques and promoting his art as a 'martial sport.' Judo was taught in Japanese schools, so Kano developed the colored belt system to motivate the kids. Shotokan Karate is a style of Okinawan Karate developed by Gichen Funakoshi. In 1922 he introduced the art to Japan where it became very popular. Karate originally meant 'Chinese hand,' reflecting the origins of the art, but Funakoshi changed the name to mean 'empty hand,' connecting it to Zen philosophy. Aikido was founded by an Aiki-Jujitsu master named Morihei Uyeshiba in Japan in 1938. Aikido, or 'the Way of Harmonizing Internal Energy (or Spirit)', specializes in joining with your opponent's energy and then using that energy against them. Vovinam shows the influence of Chinese kung fu blended with indigenous Vietnamese arts and training methods. In 1946, Grandmaster Nguyen Loc systematized the many styles of Vietnamese martial arts, calling the resulting art Vovinam (meaning 'martial arts of Vietnam'). The name was later changed to Viet Vo Dao, meaning The Way of Vietnamese Martial Arts. Cuong Nhu gets its animal techniques and Code of Ethics from Vovinam. The martial arts were indigenous to Europe as well as Asia. In 1719, James Figg opened a school in London that taught bare-fist boxing as well as various weapons systems such as the staff and cudgel. Western Boxing, with its agile footwork and effective hand techniques, brings yet another dimension to Cuong Nhu."
+  },
   {
     Tags: ["Green Belt", "Self-Defense"],    
     Name: "Five Controls for Self Defense",
@@ -181,6 +207,18 @@ const philosophyData = [
     Explanation: "The Five Alls are the basis for 3-D applications, and a 3-dimensional approach to self defense."
   },
   {
+    Tags: ["Green Belt", "Martial Arts"],    
+    Name: "Five Wins of a Winner",
+    List: [
+      "Over yourself",
+      "Opponent's respect",
+      "Third party's respect",
+      "Over the situation",
+      "People's hearts"
+    ],
+    Explanation: ""
+  },
+  {
     Tags: ["Green Belt", "Training"],
     Name: "Ten Don'ts for Sparring",
     List: [
@@ -197,70 +235,16 @@ const philosophyData = [
     ],
     Explanation: "Sparring, for some, can be a nerve-wracking or frightening part of training, at least as a beginner."
   },
-  {
-    Tags: ["Green Belt", "Training"],
-    Name: "Five Re's for Healing",
-    List: [
-      "Reduce",
-      "Relax",
-      "Reach",
-      "Reevaluate",
-      "Remember"
-    ],
-    Explanation: "Self awareness is critical to preventing and curing injuries. Only you can feel what your body is telling you. When you realize that your body is injured, you need to REDUCE or stop the activity causing the pain. If you tell your doctor 'it hurts when I do this,' many times they'll say 'don't do that' and send you home to rest. While you should heed your doctor's advice, if you've been bitten by the martial arts bug, taking time off may not sit that well with you (pardon the pun). No work out = freak out. You need to RELAX. A little time off is not going to kill you, and if you injure yourself worse, then you'll have to take more time off than if you had just rested the original injury. To rest your injury doesn't mean you have skip class and sit at home watching Oprah. It's time to REACH OUT for some creative solutions to your dilemma. If you injured your leg, maybe it's time to work on Wing Chun, hand combos, chi sao, etc. Maybe you could just sit in the dojo and observe your class, you'd be amazed by what you learn. Maybe (for higher ranks) you could help teach the beginners or kids class. Other alternatives may include physical therapy/weight training, herbs, chiropractors, oriental medicine, etc. Ultimately, you stand a good chance of having gained a deeper understanding of whatever it is that you reached out for than if you had just hung out with Oprah. After your injury heals, you should RE-EVALUATE what caused your injury (e.g., didn't stretch properly, tried a technique beyond your level, goofing off, etc.) and REMEMBER to avoid it in the future."
-  },
-  {
-    Tags: ["Green Belt", "Martial Arts"],    
-    Name: "Five Wins of a Winner",
-    List: [
-      "Over yourself",
-      "Opponent's respect",
-      "Third party's respect",
-      "Over the situation",
-      "People's hearts"
-    ],
-    Explanation: ""
-  },
-  {
-    Tags: ["Green Belt", "Martial Arts"],    
-    Name: "Seven Martial Arts of Influence",
-    List: [
-      "Shotokan",
-      "Boxing",
-      "Judo",
-      "Aikido",
-      "Wing Chun",
-      "Tai Chi Chuan",
-      "Vovinam"
-    ],
-    Explanation: "A brief history and philosophy of the Seven Styles:  Tai Chi Chuan, the Ultimate Fist, was developed in the 1200's in China by a Taoist, Chang San Feng, who had studied Tao Yin, a Chinese breathing art. Tai Chi has had a strong influence on Cuong Nhu's soft style principles. Wing Chun Kung Fu was developed in the 1700's at the Southern Shaolin Temple in China to defend against the occupying Manchurians, but they burned the temple before the style could be taught. Abbess Ng Mui escaped and taught the style to Yim Wing Chun, whose name means 'Beautiful Springtime,' for whom the style now takes its name. It is designed to maximize effectiveness for smaller, weaker fighters vs. larger, stronger opponents. Kodokan Judo was founded by a Ju-Jitsu Master named Jigoro Kano in Japan in 1882. Kano wished to popularize his art by eliminating the more dangerous jujitsu techniques and promoting his art as a 'martial sport.' Judo was taught in Japanese schools, so Kano developed the colored belt system to motivate the kids. Shotokan Karate is a style of Okinawan Karate developed by Gichen Funakoshi. In 1922 he introduced the art to Japan where it became very popular. Karate originally meant 'Chinese hand,' reflecting the origins of the art, but Funakoshi changed the name to mean 'empty hand,' connecting it to Zen philosophy. Aikido was founded by an Aiki-Jujitsu master named Morihei Uyeshiba in Japan in 1938. Aikido, or 'the Way of Harmonizing Internal Energy (or Spirit)', specializes in joining with your opponent's energy and then using that energy against them. Vovinam shows the influence of Chinese kung fu blended with indigenous Vietnamese arts and training methods. In 1946, Grandmaster Nguyen Loc systematized the many styles of Vietnamese martial arts, calling the resulting art Vovinam (meaning 'martial arts of Vietnam'). The name was later changed to Viet Vo Dao, meaning The Way of Vietnamese Martial Arts. Cuong Nhu gets its animal techniques and Code of Ethics from Vovinam. The martial arts were indigenous to Europe as well as Asia. In 1719, James Figg opened a school in London that taught bare-fist boxing as well as various weapons systems such as the staff and cudgel. Western Boxing, with its agile footwork and effective hand techniques, brings yet another dimension to Cuong Nhu."
-  },
-  {
-    Tags: ["Green Belt", "Martial Arts"],
-    Name: "Five Sources of Power",
-    List: [
-      "Mind",
-      "Body",
-      "Spirit",
-      "Soul",
-      "Ki"
-    ],
-    Explanation: "MIND: The mind is a very important source of power. You may have a lot of body strength, but if you doubt your ability, then you will have a hard time achieving your goal. Your positive attitude and belief that you can accomplish your goal will help you to realize it. 'Mind over matter' or 'Accomplishing the goal by a force of will' are some phrases that describe the power of the mind. BODY: Your body is an obvious source of power and strength. You can become stronger through body conditioning, weight training, and stamina-oriented exercises. SPIRIT: 'The power of a positive attitude' refers to one's spirit. If you approach things with enthusiasm and focus, you can accomplish many goals. You can also share your good spirit with others and better develop teamwork. Even when things are not going well, a strong spirit can help one overcome many obstacles. SOUL: The soul is the very private and personal essence of one's being. While the spirit is an outward expression of power and energy, the soul is an internal source of strength. Your ethics and system of principles lie within your soul, and by making decisions and facing challenges from your center of good principles, you can feel confident that you are taking the best path for you. 'A kind heart' makes reference to that person's soul and inner being. KI: Ki, Chi, and Qi refer to one's internal energy. By concentrating and focusing on relaxing the body and 'flowing' the ki, one can express power greater than 'normal' body strength. This expression of power is demonstrated by 'superhuman' acts, such as lifting a car that has rolled onto someone."
-  },
-
 
   {
-    Tags: ["One Brown", "Teaching", "Training"],
-    Name: "Eight Sources of Learning",
+    Tags: ["One Brown"],
+    Name: "Five Steps in Cuong Nhu Philosophy",
     List: [
-      "Sensei and Sempai",
-      "Classmates",
-      "Mirrors",
-      "Books and Media",
-      "Tournaments",
-      "Training equipment",
-      "Yourself",
-      "Seminars"
+      "Living",
+      "Giving",
+      "Caring",
+      "Sharing",
+      "Loving"
     ],
     Explanation: ""
   },
@@ -277,16 +261,31 @@ const philosophyData = [
     Explanation: ""
   },
   {
-    Tags: ["One Brown"],
-    Name: "Five Steps in Cuong Nhu Philosophy",
+    Tags: ["One Brown", "Teaching", "Training"],
+    Name: "Eight Sources of Learning",
     List: [
-      "Living",
-      "Giving",
-      "Caring",
-      "Sharing",
-      "Loving"
+      "Sensei and Sempai",
+      "Classmates",
+      "Mirrors",
+      "Books and Media",
+      "Tournaments",
+      "Training equipment",
+      "Yourself",
+      "Seminars"
     ],
     Explanation: ""
+  },
+  {
+    Tags: ["One Brown", "Training"],
+    Name: "Five Re's for Healing",
+    List: [
+      "Reduce",
+      "Relax",
+      "Reach",
+      "Reevaluate",
+      "Remember"
+    ],
+    Explanation: "Self awareness is critical to preventing and curing injuries. Only you can feel what your body is telling you. When you realize that your body is injured, you need to REDUCE or stop the activity causing the pain. If you tell your doctor 'it hurts when I do this,' many times they'll say 'don't do that' and send you home to rest. While you should heed your doctor's advice, if you've been bitten by the martial arts bug, taking time off may not sit that well with you (pardon the pun). No work out = freak out. You need to RELAX. A little time off is not going to kill you, and if you injure yourself worse, then you'll have to take more time off than if you had just rested the original injury. To rest your injury doesn't mean you have skip class and sit at home watching Oprah. It's time to REACH OUT for some creative solutions to your dilemma. If you injured your leg, maybe it's time to work on Wing Chun, hand combos, chi sao, etc. Maybe you could just sit in the dojo and observe your class, you'd be amazed by what you learn. Maybe (for higher ranks) you could help teach the beginners or kids class. Other alternatives may include physical therapy/weight training, herbs, chiropractors, oriental medicine, etc. Ultimately, you stand a good chance of having gained a deeper understanding of whatever it is that you reached out for than if you had just hung out with Oprah. After your injury heals, you should RE-EVALUATE what caused your injury (e.g., didn't stretch properly, tried a technique beyond your level, goofing off, etc.) and REMEMBER to avoid it in the future."
   },
   {
     Tags: ["One Brown"],
@@ -327,18 +326,6 @@ const philosophyData = [
   },
   {
     Tags: ["Two Brown", "Training"],
-    Name: "Training / Running Relation to Other Sports",
-    List: [
-      "Focus (timing)",
-      "Power",
-      "Endurance",
-      "Flexibility (conditioning)",
-      "Perspective"
-    ],
-    Explanation: ""
-  },
-  {
-    Tags: ["Two Brown", "Training"],
     Name: "Ten C's for Successful Training / Running",
     List: [
       "Commitment",
@@ -353,6 +340,18 @@ const philosophyData = [
       "Control of Your Body"
     ],
     Explanation: "If you want to see results, make the COMMITMENT to keep working hard no matter what. Be open to the COACHING provided by your instructors. Train with CONSISTENCY; don't skip class for questionable reasons. Have the COURAGE to try new things, take risks, make mistakes. Include CONDITIONING in your training; it will help you practice better, longer, and safer (without injuries). Find CAMARADERIE in training with your classmates, and sharing your experiences. Give all your CONCENTRATION to the task at hand when you are training. COMMUNICATE with training partners (to keep practice safe) and instructors (to get your questions answered). Rather than being in competition with your classmates, remember COMPETITION WITH YOURSELF is the best kind; strive to be better today than you were yesterday. In time, you will gain the CONTROL OVER YOUR BODY that comes with mastery of physical skills."
+  },
+  {
+    Tags: ["Two Brown", "Training"],
+    Name: "Training / Running Relation to Other Sports",
+    List: [
+      "Focus (timing)",
+      "Power",
+      "Endurance",
+      "Flexibility (conditioning)",
+      "Perspective"
+    ],
+    Explanation: ""
   },
 
   {
@@ -398,6 +397,24 @@ const philosophyData = [
   },
 
   {
+    Tags: ["One Black", "Martial Arts"],
+    Name: "Ten Stages of Growth",
+    List: [
+      "Nobody",
+      "Learner",
+      "Worker",
+      "Fighter",
+      "Achiever",
+      "Winner",
+      "Teacher",
+      "Leader",
+      "Thinker",
+      "Philosopher",
+      "Nobody"
+    ],
+    Explanation: "Every learning process starts as a clean slate, an empty cup. A NOBODY begins by being a LEARNER. Any learning process takes time and hard work, thus one becomes a WORKER. When you work at something and really want it you will fight for it, evolving into a FIGHTER and when you fight for something you will be an ACHIEVER by definition, and to achieve is to be a WINNER. When you're a winner you teach others to win also and you evolve into a TEACHER. A good teacher will naturally be a LEADER and blaze the path for others. A leader must plan and understand therefore becoming a THINKER and in essence a thinker begins to understand with more depth and understanding without ego,thus evolving into a PHILOSOPHER which is like evolving the ego from a liquid state to a gas,which can take on all shapes and situations. This egoless state is enlightenment, 'the greatest person is NOBODY.'"
+  },
+  {
     Tags: ["One Black", "Teaching"],
     Name: "Five Loves of a Sensei",
     List: [
@@ -420,24 +437,6 @@ const philosophyData = [
       "Don't lose your composure"
     ],
     Explanation: ""
-  },
-    {
-    Tags: ["One Black", "Martial Arts"],
-    Name: "Ten Stages of Growth",
-    List: [
-      "Nobody",
-      "Learner",
-      "Worker",
-      "Fighter",
-      "Achiever",
-      "Winner",
-      "Teacher",
-      "Leader",
-      "Thinker",
-      "Philosopher",
-      "Nobody"
-    ],
-    Explanation: "Every learning process starts as a clean slate, an empty cup. A NOBODY begins by being a LEARNER. Any learning process takes time and hard work, thus one becomes a WORKER. When you work at something and really want it you will fight for it, evolving into a FIGHTER and when you fight for something you will be an ACHIEVER by definition, and to achieve is to be a WINNER. When you're a winner you teach others to win also and you evolve into a TEACHER. A good teacher will naturally be a LEADER and blaze the path for others. A leader must plan and understand therefore becoming a THINKER and in essence a thinker begins to understand with more depth and understanding without ego,thus evolving into a PHILOSOPHER which is like evolving the ego from a liquid state to a gas,which can take on all shapes and situations. This egoless state is enlightenment, 'the greatest person is NOBODY.'"
   },
 
   {
@@ -485,6 +484,18 @@ const philosophyData = [
     Explanation: ""
   },
   {
+    Tags: ["Black Belt", "Leadership"],
+    Name: "Five 'tions' in Leadership",
+    List: [
+      "Communication",
+      "Education",
+      "Application / Action",
+      "Delegation",
+      "Production"
+    ],
+    Explanation: ""
+  },
+  {
     Tags: ["Black Belt"],
     Name: "Five Togethers at Annual Training",
     List: [
@@ -496,43 +507,7 @@ const philosophyData = [
     ],
     Explanation: ""
   },
-  {
-    Tags: ["Black Belt", "Leadership"],
-    Name: "5 'tions' in Leadership",
-    List: [
-      "Communication",
-      "Education",
-      "Application / Action",
-      "Delegation",
-      "Production"
-    ],
-    Explanation: ""
-  },
 
-  {
-    Tags: ["Shodan", "Leadership"],
-    Name: "5 C's for Good Communication",
-    List: [
-      "Clear",
-      "Concise",
-      "Concrete",
-      "Consultative (2-way)",
-      "Composed"
-    ],
-    Explanation: ""
-  },
-  {
-    Tags: ["Shodan", "Leadership"],
-    Name: "5 V's in Poor Communication",
-    List: [
-      "Vague",
-      "Verbose",
-      "Variable",
-      "Vacant",
-      "Vituperative"
-    ],
-    Explanation: ""
-  },
   {
     Tags: ["Shodan", "Martial Arts"],
     Name: "Five Saves in Wing Chun",
@@ -554,6 +529,30 @@ const philosophyData = [
       "Enthusiasm",
       "Enhancement",
       "Enamor"
+    ],
+    Explanation: ""
+  },
+  {
+    Tags: ["Shodan", "Leadership"],
+    Name: "5 C's for Good Communication",
+    List: [
+      "Clear",
+      "Concise",
+      "Concrete",
+      "Consultative (2-way)",
+      "Composed"
+    ],
+    Explanation: ""
+  },
+  {
+    Tags: ["Shodan", "Leadership"],
+    Name: "5 V's in Poor Communication",
+    List: [
+      "Vague",
+      "Verbose",
+      "Variable",
+      "Vacant",
+      "Vituperative"
     ],
     Explanation: ""
   }
