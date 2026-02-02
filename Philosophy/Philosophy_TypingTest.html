@@ -49,11 +49,12 @@
   <script src="../Assets/Data/Philosophy_JSON.js" defer></script>
   <script defer>
 
-
 function checkPhilosophyDataItem(philosophyDataItemName){
     console.log("Check Philosophy Item: " + philosophyDataItemName);
     var philosophyDataItem = philosophyData.find(c => c.Name === philosophyDataItemName)
     var philosophyDataItemList = philosophyDataItem.List
+    var philosophyDataItemTags = philosophyDataItem.Tags
+    var philosophyDataItemTagsText = philosophyDataItemTags.join(", ")
     var philosophyDataItemText = philosophyDataItemList.join(", ")    
     var philosophyDataItemExplanation = philosophyDataItem.Explanation
 
@@ -161,11 +162,13 @@ function resetGame() {
 
     var philosophyDataItemName = philosophyDataItem.Name
     var philosophyDataItemList = philosophyDataItem.List
+    var philosophyDataItemTags = philosophyDataItem.Tags
+    var philosophyDataItemTagsText = philosophyDataItemTags.join(", ")
     var philosophyDataItemText = philosophyDataItemList.join(", ")    
     var philosophyDataItemExplanation = philosophyDataItem.Explanation
     console.log("Add Philosophy Item: " + philosophyDataItemName);
 
-    innerHTML += `<label for="${philosophyDataItemName}">${philosophyDataItemName}: </label>
+    innerHTML += `<label for="${philosophyDataItemName}">${philosophyDataItemName} (${philosophyDataItemTagsText}): </label>
   <span id ="status_${philosophyDataItemName}">placeholder</span>
   <span class="tooltip" id="tooltipContainer_${philosophyDataItemName}">
     <i class="fa fa-question-circle"></i>

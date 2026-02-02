@@ -8,7 +8,7 @@
         function(philosophy){
           var listItem = document.createElement("li");
           var heading = document.createElement("span");
-          heading.innerText = philosophy.Name;
+          heading.innerText = philosophy.Name + " (" + philosophy.Tags.join(", ") + ")";
           listItem.appendChild(heading);
 
           var sublist = document.createElement("ul");
