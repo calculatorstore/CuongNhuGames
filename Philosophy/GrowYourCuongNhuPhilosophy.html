@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow Your the Cuong Nhu Philosophy</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../Assets/Data/Philosophy_JSON.js" defer></script>
+    <script src="GrowYourCuongNhuPhilosophy.js" defer></script>
+</head>
+<body>
+    <div id="game-modal">
+        <div id="content">
+            <img src="#" alt="gif">
+            <h4>Game Over!</h4>
+            <p>The correct word was: <b>rainbow</b></p>
+            <button id="modal-next-topic" onclick="getNextTopic()">Next Topic</button>
+        </div>
+    </div>
+    <table id="game-main">
+        <tr>
+            <td id="top-panel" colspan="2">
+                <h1 id="title">
+                    <img src="../Assets/images/cropped-cnrd-newlogo.webp" height="24px" width="24px">
+                    <span>Grow Your Cuong Nhu Philosophy</span>
+                    <img src="../Assets/images/cropped-cnrd-newlogo.webp" height="24px" width="24px">
+                </h1>
+                <h3>Philosophy Category:</h3>
+                <div id = "category-check-boxes">
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="radio" id="All" name="category" onchange="changeCategory();" value="All" checked><label for="All">All</label> &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" id="Leadership" name="category" onchange="changeCategory();" value="Leadership"><label for="Leadership">Leadership</label> &nbsp;
+                            </td>
+                            <td>
+                                <input type="radio" id="Martial Arts" name="category" onchange="changeCategory();" value="Martial Arts"><label for="Martial Arts">Martial Arts</label> &nbsp; 
+                            </td>
+                            <td>
+                                <input type="radio" id="Self-Defense" name="category" onchange="changeCategory();" value="Self-Defense"><label for="Self-Defense">Self-Defense</label> &nbsp; 
+                            </td>
+                            <td>
+                                <input type="radio" id="Teaching" name="category" onchange="changeCategory();" value="Teaching"><label for="Teaching">Teaching</label> &nbsp; 
+                            </td>
+                            <td>
+                                <input type="radio" id="Training" name="category" onchange="changeCategory();" value="Training"><label for="Training">Training</label> &nbsp; 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" id="One Green" name="category" onchange="changeCategory();" value="One Green"><label for="One Green">One Green</label> &nbsp; 
+                            </td>
+                            <td>
+                                <input type="radio" id="Two Green" name="category" onchange="changeCategory();" value="Two Green"><label for="Two Green">Two Green</label> &nbsp; 
+                            </td>
+                            <td>
+                                <input type="radio" id="Green Belt" name="category" onchange="changeCategory();" value="Green Belt"><label for="Green Belt">Green Belt</label> &nbsp; 
+                            </td>
+                            <td>
+                                <input type="radio" id="One Brown" name="category" onchange="changeCategory();" value="One Brown"><label for="One Brown">One Brown</label> &nbsp; 
+                            </td>
+                            <td>
+                                <input type="radio" id="Two Brown" name="category" onchange="changeCategory();" value="Two Brown"><label for="Two Brown">Two Brown</label> &nbsp; 
+                            </td>
+                            <td>
+                                <input type="radio" id="Brown Belt" name="category" onchange="changeCategory();" value="Brown Belt"><label for="Brown Belt">Brown Belt</label> &nbsp; 
+                            </td>
+                            <td>
+                                <input type="radio" id="One Black" name="category" onchange="changeCategory();" value="One Black"><label for="One Black">One Black</label> &nbsp; 
+                            </td>
+                            <td>
+                                <input type="radio" id="Two Black" name="category" onchange="changeCategory();" value="Two Black"><label for="Two Black">Two Black</label> &nbsp; 
+                            </td>
+                            <td>
+                                <input type="radio" id="Black Belt" name="category" onchange="changeCategory();" value="Black Belt"><label for="Black Belt">Black Belt</label> &nbsp; 
+                            </td>
+                            <td>
+                                <input type="radio" id="Shodan" name="category" onchange="changeCategory();" value="Shodan"><label for="Shodan">Shodan</label> &nbsp; 
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <br>
+                <span id="changeTopicButtons">
+                    <button class="topic-change-button" id="previous-Topic" onclick="getPreviousTopic()">Previous Topic</button> 
+                    <button class="topic-change-button" id="next-topic" onclick="getNextTopic()">Next Topic</button> 
+                    <button class="topic-change-button" id="random-topic" onclick="getRandomTopic()">Random Topic</button> 
+                </span>
+                <h2 id="current-topic"><b></b></h2>
+                <h3 id="current-topic-category"><b></b></h2>
+            </td>
+        </tr>
+        <tr>
+            <td id="left-panel">
+                <img id="apple-tree" src="#" draggable="false" alt="apple-tree" style="max-width: 600px;height: auto;"/>
+                <h4 id="guesses-text">
+                    Correct guesses: <b id = "correct-guess">0</b><br>
+                    Incorrect guesses: <b id = "incorrect-guess">0/6</b>
+                </h4>
+                <div id="bad-apples"></div>
+                <div id="keyboard"></div>
+            </td>
+            <td id="right-panel">
+                <ol id="word-list"></ol>
+            </td>
+        </tr>
+        <tr>
+            <td id="bottom-panel" colspan="2">
+                Philosophy lists taken from the October 1994 Cuong Nhu Oriental Martial Arts Instruction Manual found on the Cuong Nhu website Curriculum Resources Page.
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

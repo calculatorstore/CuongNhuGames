@@ -1,0 +1,215 @@
+/* Importing Google font - Open Sans */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+body {
+    /*display: flex;*/
+    padding: 0 10px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /*background: #5E63BA;*/
+}
+td {
+    vertical-align: top; 
+}
+label{
+    padding-left: 3px;
+}
+
+#left-panel {
+    width: 20%;
+}
+
+#category-check-boxes{
+    padding: 10 px;
+}
+
+#apple-tree {
+    user-select: none;
+    width: 450px;
+}
+
+#game-main{
+    width: 100%;
+}
+
+#title {
+    font-size: 2em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#word-list{
+    padding-inline-start: 40px;
+}
+
+.word-display {
+    gap: 2px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: left;
+    min-height: 2em;
+}
+.word-display .letter {
+    width: 1.25em;
+    font-size: 2em;
+    text-align: center;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+#guesses-text {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+#guesses-text b {
+    font-weight: 600;
+}
+#incorrect-guess {
+    color: #ff0000;
+}
+
+#correct-guess {
+    color:  #008000;
+}
+
+#bad-apples {
+    display: inline-block;
+    white-space: nowrap
+}
+
+.keyboard-row {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    justify-content: left;
+}
+
+.topic-change-button{
+    border: 1px;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    background: lightgray;
+    color: black;
+    padding: 7px;
+}
+.topic-change-button:hover {
+    background: darkred;
+    color: white;
+}
+.key {
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    text-transform: uppercase;
+    background: darkred;
+    padding: 7px;
+    width: calc(10% - 5px);
+    max-width: 40px;
+}
+.key:disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+.key:hover {
+    background: #8286c9;
+}
+#game-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 0 10px;
+    transition: opacity 0.4s ease;
+}
+
+#game-modal.show {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.4s 0.4s ease;
+}
+
+#content {
+    padding: 30px;
+    max-width: 420px;
+    width: 100%;
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+#game-modal img {
+    max-width: 130px;
+    margin-bottom: 20px;
+}
+#game-modal h4 {
+    font-size: 1.53rem;
+}
+#game-modal p {
+    font-size: 1.15rem;
+    margin: 15px 0 30px;
+    font-weight: 500;
+}
+#game-modal p b {
+    color: #5E63BA;
+    font-weight: 600;
+}
+#game-modal button {
+    padding: 12px 23px;
+}
+@media (max-width: 782px) {
+    #game-main {
+        flex-direction: column;
+        padding: 30px 15px;
+        align-items: center;
+    }
+    #apple-tree img {
+        max-width: 200px;
+    }
+    #guesses-text h4 {
+        font-size: 1rem;
+    }
+    .word-display .letter {
+        margin-bottom: 35px;
+        font-size: 1.7rem;
+    }
+    .word-display .letter.guessed {
+        margin: -35px 0 25px;
+    }
+    #game-modal img {
+        max-width: 120px;
+    }
+    #game-modal h4 {
+        font-size: 1.45rem;
+    }
+    #game-modal p {
+        font-size: 1.1rem;
+    }
+    #game-modal button {
+        padding: 10px 18px;
+    }
+}
