@@ -1,7 +1,27 @@
 <html>
-<head></head>
+<head>
+    <script>
+        function ChangeLinkHref(selectElement) {
+            document.getElementById("JumpToGameLink").href = selectElement.value;
+            document.getElementById("JumpToGameLink").click();
+        }
+    </script>
+</head>
 <body>
-<a href="sitemap.html" target = "MainFrame">Home</a>
+<form>
+  <label for="page-select1">Jump to:</label>
+  <select id="page-select1" onchange="ChangeLinkHref(this)">
+    <option value="Sitemap.html">Home</option>
+    <option value="CodeOfEthics/CodeOfEthics_DynamicText.html">Code of Ethics Full Text</option>
+    <option value="CodeOfEthics/CodeOfEthics_TypingTest.html">Code of Ethics Typing Test (HTML)</option>
+    <option value="CodeOfEthics/CodeOfEthics_FillInTheBlank.pdf">Code of Ethics Fill-In-The-Blank (Print Out)</option>
+    <option value="Philosophy/Philosophy_DynamicText.html">Philosophy Full Text</option>
+    <option value="Philosophy/GrowYourCuongNhuPhilosophy.html">Grow Your Cuong Nhu Philosophy</option>
+    <option value="Philosophy/Philosophy_TypingTest.html">Philosophy Typing Test</option>
+    <option value="Crossword/CuongNhuCrossword.pdf">Philosophy Crossword</option>
+</select>
+<a id="JumpToGameLink" href="" target="MainFrame" hidden>GO</a>
+</form>
 <hr>
 </body>
 </html>
