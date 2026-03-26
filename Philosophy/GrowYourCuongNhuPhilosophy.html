@@ -31,39 +31,52 @@
         <tr>
             <td id="left-panel" style = "width: 100%">
                 <h2>Category and Topic</h2>
-                <form>
-                    <label for="changeCategoryDropDown">Philosophy Category: </label>
-                    <select id="changeCategoryDropDown" onchange="changeCategory()">
-                        <option value="All">All</option>
-                        <option value="Leadership">Leadership</option>
-                        <option value="Martial Arts">Martial Arts</option>
-                        <option value="Self-Defense">Self-Defense</option>
-                        <option value="Teaching">Teaching</option>
-                        <option value="Training">Training</option>
-                        <option value="One Green">One Green</option>
-                        <option value="Two Green">Two Green</option>                        
-                        <option value="Green Belt">Green Belt</option>
-                        <option value="One Brown">One Brown</option>
-                        <option value="Two Brown">Two Brown</option>                        
-                        <option value="Brown Belt">Brown Belt</option>
-                        <option value="One Black">One Black</option>
-                        <option value="Two Black">Two Black</option>                        
-                        <option value="Black Belt">Black Belt</option>                      
-                        <option value="Shodan">Shodan</option>
-                    </select>
-                </form>
                 <table style="padding: 0px;">
                     <tr>
-                        <td style="text-align: center;">
+                        <td style="vertical-align: center; text-align: left;">
+                            Philosophy Category:
+                        </td>
+                        <td style="vertical-align: center; text-align: left;">
                             <form>
-                                <label for="changeTopicDropDown">Philosophy Topic: </label>
-                                <select id="changeTopicDropDown" onchange="changeTopic()"></select>
+                                <select id="changeCategoryDropDown" style="width: 500px;" onchange="changeCategory()">
+                                    <option value="All">All</option>
+                                    <option value="Leadership">Leadership</option>
+                                    <option value="Martial Arts">Martial Arts</option>
+                                    <option value="Self-Defense">Self-Defense</option>
+                                    <option value="Teaching">Teaching</option>
+                                    <option value="Training">Training</option>
+                                    <option value="One Green">One Green</option>
+                                    <option value="Two Green">Two Green</option>                        
+                                    <option value="Green Belt">Green Belt</option>
+                                    <option value="One Brown">One Brown</option>
+                                    <option value="Two Brown">Two Brown</option>                        
+                                    <option value="Brown Belt">Brown Belt</option>
+                                    <option value="One Black">One Black</option>
+                                    <option value="Two Black">Two Black</option>                        
+                                    <option value="Black Belt">Black Belt</option>                      
+                                    <option value="Shodan">Shodan</option>
+                                </select>
                             </form>
                         </td>
-                        <td style="text-align: center;">
-                            <button class="topic-change-button" id="previous-topic" onclick="getPreviousTopic()" title="Previous Topic"><i class="fa-solid fa-arrow-left"></i></button> 
-                            <button class="topic-change-button" id="random-topic" onclick="getRandomTopic()" title="Random Topic"><i class="fa-solid fa-dice"></i></button> 
-                            <button class="topic-change-button" id="next-topic" onclick="getNextTopic()" title="Next Topic"><i class="fa-solid fa-arrow-right"></i></button> 
+                        <td style="vertical-align: center; text-align: left;">
+                            <button class="change-button" id="previous-category" onclick="getPreviousCategory()" title="Previous Category"><i class="fa-solid fa-arrow-left"></i></button> 
+                            <button class="change-button" id="random-category" onclick="getRandomCategory()" title="Random Category"><i class="fa-solid fa-dice"></i></button> 
+                            <button class="change-button" id="next-category" onclick="getNextCategory()" title="Next Category"><i class="fa-solid fa-arrow-right"></i></button> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: center; text-align: left;">
+                            Philosophy Topic:
+                        </td>
+                        <td style="vertical-align: center; text-align: left;">
+                            <form>
+                                <select id="changeTopicDropDown" style="width: 500px;" onchange="changeTopic()"></select>
+                            </form>
+                        </td>
+                        <td style="vertical-align: center; text-align: left;">
+                            <button class="change-button" id="previous-topic" onclick="getPreviousTopic()" title="Previous Topic"><i class="fa-solid fa-arrow-left"></i></button> 
+                            <button class="change-button" id="random-topic" onclick="getRandomTopic()" title="Random Topic"><i class="fa-solid fa-dice"></i></button> 
+                            <button class="change-button" id="next-topic" onclick="getNextTopic()" title="Next Topic"><i class="fa-solid fa-arrow-right"></i></button> 
                         </td>
                     </tr>
                 </table>            

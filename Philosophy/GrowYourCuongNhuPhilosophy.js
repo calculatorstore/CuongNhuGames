@@ -14,8 +14,45 @@ const changeCategory = () => {
     setTopic();
 }
 
+const getPreviousCategory = () => {
+    // Select the previous category
+    categoryElt = document.getElementById("changeCategoryDropDown");
+    let currentCategoryIndex = categoryElt.selectedIndex;
+    let CategoryCount = categoryElt.options.length;
+    currentCategoryIndex = (CategoryCount + currentCategoryIndex - 1) % CategoryCount;
+    categoryElt.selectedIndex = currentCategoryIndex;
+
+    setCategory();
+    setTopic();
+}
+
+const getNextCategory = () => {
+    // Select the next category
+    categoryElt = document.getElementById("changeCategoryDropDown");
+    let currentCategoryIndex = categoryElt.selectedIndex;
+    let CategoryCount = categoryElt.options.length;
+    currentCategoryIndex = (CategoryCount + currentCategoryIndex + 1) % CategoryCount;
+    categoryElt.selectedIndex = currentCategoryIndex;
+
+    setCategory();
+    setTopic();
+}
+
+const getRandomCategory = () => {
+    // Select a random category
+    categoryElt = document.getElementById("changeCategoryDropDown");
+    let currentCategoryIndex = categoryElt.selectedIndex;
+    let CategoryCount = categoryElt.options.length;
+    currentCategoryIndex = Math.floor(Math.random() * CategoryCount);
+    categoryElt.selectedIndex = currentCategoryIndex;
+
+    setCategory();
+    setTopic();
+
+}
+
 const changeTopic = () => {
-    // Select the previous topic from the category
+    // Select the current topic from the category
     setTopic();
 }
 
