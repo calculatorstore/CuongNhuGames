@@ -95,14 +95,16 @@ label{
 }
 
 .topic-change-button{
-    border: 1px;
+    border: 0px;
     outline: none;
     cursor: pointer;
     font-size: 1rem;
-    border-radius: 4px;
+    border-radius: 3px;
     background: lightgray;
     color: black;
-    padding: 7px;
+    padding: 1px;
+    height:24px;
+    width:24px;
 }
 .topic-change-button:hover {
     background: darkred;

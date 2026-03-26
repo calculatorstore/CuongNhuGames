@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="../Assets/Data/Philosophy_JSON.js" defer></script>
     <script src="GrowYourCuongNhuPhilosophy.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <div id="game-modal">
@@ -17,7 +18,7 @@
             <button id="modal-next-topic" onclick="getNextTopic()">Next Topic</button>
         </div>
     </div>
-    <table id="game-main">
+    <table id="game-main" >
         <tr>
             <td id="top-panel" colspan="2">
                 <h1 id="title">
@@ -25,87 +26,65 @@
                     <span>Grow Your Cuong Nhu Philosophy</span>
                     <img src="../Assets/Images/cropped-cnrd-newlogo.webp" height="24px" width="24px">
                 </h1>
-                <h3>Philosophy Category:</h3>
-                <div id = "category-check-boxes">
-                    <table>
-                        <tr>
-                            <td>
-                                <input type="radio" id="All" name="category" onchange="changeCategory();" value="All" checked><label for="All">All</label> &nbsp;
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="radio" id="Leadership" name="category" onchange="changeCategory();" value="Leadership"><label for="Leadership">Leadership</label> &nbsp;
-                            </td>
-                            <td>
-                                <input type="radio" id="Martial Arts" name="category" onchange="changeCategory();" value="Martial Arts"><label for="Martial Arts">Martial Arts</label> &nbsp; 
-                            </td>
-                            <td>
-                                <input type="radio" id="Self-Defense" name="category" onchange="changeCategory();" value="Self-Defense"><label for="Self-Defense">Self-Defense</label> &nbsp; 
-                            </td>
-                            <td>
-                                <input type="radio" id="Teaching" name="category" onchange="changeCategory();" value="Teaching"><label for="Teaching">Teaching</label> &nbsp; 
-                            </td>
-                            <td>
-                                <input type="radio" id="Training" name="category" onchange="changeCategory();" value="Training"><label for="Training">Training</label> &nbsp; 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="radio" id="One Green" name="category" onchange="changeCategory();" value="One Green"><label for="One Green">One Green</label> &nbsp; 
-                            </td>
-                            <td>
-                                <input type="radio" id="Two Green" name="category" onchange="changeCategory();" value="Two Green"><label for="Two Green">Two Green</label> &nbsp; 
-                            </td>
-                            <td>
-                                <input type="radio" id="Green Belt" name="category" onchange="changeCategory();" value="Green Belt"><label for="Green Belt">Green Belt</label> &nbsp; 
-                            </td>
-                            <td>
-                                <input type="radio" id="One Brown" name="category" onchange="changeCategory();" value="One Brown"><label for="One Brown">One Brown</label> &nbsp; 
-                            </td>
-                            <td>
-                                <input type="radio" id="Two Brown" name="category" onchange="changeCategory();" value="Two Brown"><label for="Two Brown">Two Brown</label> &nbsp; 
-                            </td>
-                            <td>
-                                <input type="radio" id="Brown Belt" name="category" onchange="changeCategory();" value="Brown Belt"><label for="Brown Belt">Brown Belt</label> &nbsp; 
-                            </td>
-                            <td>
-                                <input type="radio" id="One Black" name="category" onchange="changeCategory();" value="One Black"><label for="One Black">One Black</label> &nbsp; 
-                            </td>
-                            <td>
-                                <input type="radio" id="Two Black" name="category" onchange="changeCategory();" value="Two Black"><label for="Two Black">Two Black</label> &nbsp; 
-                            </td>
-                            <td>
-                                <input type="radio" id="Black Belt" name="category" onchange="changeCategory();" value="Black Belt"><label for="Black Belt">Black Belt</label> &nbsp; 
-                            </td>
-                            <td>
-                                <input type="radio" id="Shodan" name="category" onchange="changeCategory();" value="Shodan"><label for="Shodan">Shodan</label> &nbsp; 
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <br>
-                <span id="changeTopicButtons">
-                    <button class="topic-change-button" id="previous-Topic" onclick="getPreviousTopic()">Previous Topic</button> 
-                    <button class="topic-change-button" id="next-topic" onclick="getNextTopic()">Next Topic</button> 
-                    <button class="topic-change-button" id="random-topic" onclick="getRandomTopic()">Random Topic</button> 
-                </span>
-                <h2 id="current-topic"><b></b></h2>
-                <h3 id="current-topic-category"><b></b></h2>
             </td>
         </tr>
         <tr>
-            <td id="left-panel">
-                <img id="apple-tree" src="#" draggable="false" alt="apple-tree" style="max-width: 600px;height: auto;"/>
-                <h4 id="guesses-text">
-                    Correct guesses: <b id = "correct-guess">0</b><br>
-                    Incorrect guesses: <b id = "incorrect-guess">0/6</b>
-                </h4>
-                <div id="bad-apples"></div>
-                <div id="keyboard"></div>
-            </td>
-            <td id="right-panel">
+            <td id="left-panel" style = "width: 100%">
+                <h2>Category and Topic</h2>
+                <form>
+                    <label for="changeCategoryDropDown">Philosophy Category: </label>
+                    <select id="changeCategoryDropDown" onchange="changeCategory()">
+                        <option value="All">All</option>
+                        <option value="Leadership">Leadership</option>
+                        <option value="Martial Arts">Martial Arts</option>
+                        <option value="Self-Defense">Self-Defense</option>
+                        <option value="Teaching">Teaching</option>
+                        <option value="Training">Training</option>
+                        <option value="One Green">One Green</option>
+                        <option value="Two Green">Two Green</option>                        
+                        <option value="Green Belt">Green Belt</option>
+                        <option value="One Brown">One Brown</option>
+                        <option value="Two Brown">Two Brown</option>                        
+                        <option value="Brown Belt">Brown Belt</option>
+                        <option value="One Black">One Black</option>
+                        <option value="Two Black">Two Black</option>                        
+                        <option value="Black Belt">Black Belt</option>                      
+                        <option value="Shodan">Shodan</option>
+                    </select>
+                </form>
+                <table style="padding: 0px;">
+                    <tr>
+                        <td style="text-align: center;">
+                            <form>
+                                <label for="changeTopicDropDown">Philosophy Topic: </label>
+                                <select id="changeTopicDropDown" onchange="changeTopic()"></select>
+                            </form>
+                        </td>
+                        <td style="text-align: center;">
+                            <button class="topic-change-button" id="previous-topic" onclick="getPreviousTopic()" title="Previous Topic"><i class="fa-solid fa-arrow-left"></i></button> 
+                            <button class="topic-change-button" id="random-topic" onclick="getRandomTopic()" title="Random Topic"><i class="fa-solid fa-dice"></i></button> 
+                            <button class="topic-change-button" id="next-topic" onclick="getNextTopic()" title="Next Topic"><i class="fa-solid fa-arrow-right"></i></button> 
+                        </td>
+                    </tr>
+                </table>            
+                <br>
+                <h2 id="current-topic"><b></b></h2>
+                <h3 id="current-topic-category"><b></b></h2>
+
+                <br>
                 <ol id="word-list"></ol>
+            </td>
+            <td id="right-panel" style="width: 400px;">
+                <div id="keyboard"></div>
+                <br>
+                <div style="width: 400px">
+                    <img id="apple-tree" src="#" draggable="false" alt="apple-tree" style="width: 400px;height: 400px;"/>
+                    <h4 id="guesses-text">
+                        Correct guesses: <b id = "correct-guess">0</b><br>
+                        Incorrect guesses: <b id = "incorrect-guess">0/6</b>
+                    </h4>
+                </div>
+                <div id="bad-apples" style="height:100px"></div>
             </td>
         </tr>
         <tr>

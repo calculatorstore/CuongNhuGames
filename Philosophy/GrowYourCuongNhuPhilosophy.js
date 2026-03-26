@@ -6,30 +6,89 @@ const appleTreeImage = document.querySelector("#apple-tree");
 const badApples = document.querySelector("#bad-apples");
 const gameModal = document.querySelector("#game-modal");
 // Initializing game variables
-let currentWords, currentWordsShort, currentCategory, filteredPhilosophyData, currentCategorySize, currentTopic, currentTopicCategories, currentTopicIndex, allCorrectLetters, guessedCorrectLetters, wrongGuessCount;
 const maxGuesses = 6;
 
+const changeCategory = () => {
+    // Select the previous topic from the category
+    setCategory();
+    setTopic();
+}
+
+const changeTopic = () => {
+    // Select the previous topic from the category
+    setTopic();
+}
+
+const getPreviousTopic = () => {
+    // Select the previous topic from the category
+    topicElement = document.getElementById("changeTopicDropDown");
+    let currentTopicIndex = topicElement.selectedIndex;
+    setCategory();
+    let currentCategorySize = topicElement.options.length;
+    currentTopicIndex = (currentCategorySize + currentTopicIndex - 1) % currentCategorySize;
+    topicElement.selectedIndex = currentTopicIndex;
+    setTopic();
+}
+
+const getNextTopic = () => {
+    // Select the next topic from the category
+    topicElement = document.getElementById("changeTopicDropDown");
+    let currentTopicIndex = topicElement.selectedIndex;
+    setCategory();
+    let currentCategorySize = topicElement.options.length;
+    currentTopicIndex = (currentTopicIndex + 1) % currentCategorySize
+    topicElement.selectedIndex = currentTopicIndex;
+    setTopic();
+}
+
+const getRandomTopic = () => {
+    // Selecting a random topic from the category
+    topicElement = document.getElementById("changeTopicDropDown");
+    let currentTopicIndex = topicElement.selectedIndex;
+    setCategory();
+    let currentCategorySize = topicElement.options.length;
+    currentTopicIndex = Math.floor(Math.random() * currentCategorySize);
+    topicElement.selectedIndex = currentTopicIndex;
+    setTopic();
+}
+
 const setCategory = () => {
-    // Set the category based on radio button selection.  This changes the currentCategory, filteredPhilosophyData, and currentCategorySize
-    currentCategory = document.querySelector('input[name="category"]:checked').value
+    // Set the category based on drop down selection.  This changes the options for the topics as well
+    categoryElt = document.getElementById("changeCategoryDropDown");
+    topicElement = document.getElementById("changeTopicDropDown");
+    let currentCategory = categoryElt.value;
+    let currentTopicIndex = topicElement.selectedIndex
+
     if (currentCategory == "All"){
         filteredPhilosophyData = philosophyData
     } else {
         filteredPhilosophyData = philosophyData.filter(dataElt => dataElt.Tags.includes(currentCategory))
     }
-    currentCategorySize = filteredPhilosophyData.length
+    let currentCategorySize = filteredPhilosophyData.length
+        
+    topicElement.innerHTML = ""
+    let topicIndex = 0
+    filteredPhilosophyData.forEach((philosophyElt) => {
+        topicIndex ++
+        topicElement.innerHTML += `<option value="${philosophyElt.Name}">${philosophyElt.Name} (${topicIndex}/${currentCategorySize})</option>`
+    });
+    currentTopicIndex = currentTopicIndex % currentCategorySize;
+    topicElement.selectedIndex = currentTopicIndex;
 }
+
+let allCorrectLetters, wrongGuessCount, guessedCorrectLetters
 
 const setTopic = () => {
     // Set the topic based on the category and topic index
-    const curPhilosphy = filteredPhilosophyData[currentTopicIndex % currentCategorySize]
-    currentWords = curPhilosphy.List ; // Making currentWord as random word
-    currentWordsShort = currentWords.map(w => w.replaceAll(/\s*\(.*/gi, ""))
-    currentTopic = curPhilosphy.Name
-    currentTopicCategories = curPhilosphy.Tags.join("/")
-}
+    categoryElt = document.getElementById("changeCategoryDropDown");
+    topicElement = document.getElementById("changeTopicDropDown");
 
-const resetGame = () => {
+    const curPhilosphy = philosophyData.filter(dataElt => dataElt.Name == topicElement.value)[0];
+    let currentWords = curPhilosphy.List ; // Making currentWord as random word
+    let currentWordsShort = currentWords.map(w => w.replaceAll(/\s*\(.*/gi, ""));
+    let currentTopic = curPhilosphy.Name;
+    let currentTopicCategories = curPhilosphy.Tags.join("/");
+
     // Ressetting game variables and UI elements
     allCorrectLetters = [];
     guessedCorrectLetters = []
@@ -39,7 +98,7 @@ const resetGame = () => {
     correctGuessText.innerHTML = "0"
     incorrectGuessText.innerHTML = `0/${maxGuesses}`
     wordList.innerHTML="";
-    document.querySelector("#current-topic").innerText = `${currentTopic} (${currentCategory}: ${currentTopicIndex+1}/${currentCategorySize})`;
+    document.querySelector("#current-topic").innerText = `${currentTopic}`;
     document.querySelector("#current-topic-category").innerText = `${currentTopicCategories}`;
     currentWordsShort.forEach((currentWord) => {
         let wordListElt = document.createElement("li");
@@ -62,51 +121,16 @@ const resetGame = () => {
     gameModal.classList.remove("show");
 }
 
-const changeCategory = () => {
-    // Select the previous topic from the category
-    setCategory();
-    currentTopicIndex = currentTopicIndex % currentCategorySize
-    setTopic();
-    resetGame();
-}
-
-
-const getPreviousTopic = () => {
-    // Select the previous topic from the category
-    setCategory();
-    currentTopicIndex = (currentTopicIndex - 1) % currentCategorySize
-    setTopic();
-    resetGame();
-}
-
-const getNextTopic = () => {
-    // Select the next topic from the category
-    setCategory();
-    currentTopicIndex = (currentTopicIndex + 1) % currentCategorySize
-    setTopic();
-    resetGame();
-}
-
-const getRandomTopic = () => {
-    // Selecting a random topic from the category
-    setCategory();
-    currentTopicIndex = Math.floor(Math.random() * filteredPhilosophyData.length);
-    setTopic();
-    resetGame();
-}
-
-const gameOver = (isVictory) => {
-    // After game complete.. showing modal with relevant details
-    const modalText = isVictory ? `You found the correct answer:` : 'The answer was:';
-    const htmlWordList = currentWords.map(w => `<li>${w}</li>`).join("")
-    const imageNo = Math.floor(17 * guessedCorrectLetters.length / allCorrectLetters.length)
-
-    gameModal.querySelector("img").src = `../Assets/Images/${imageNo}.jpg`;
-    gameModal.querySelector("h4").innerText = isVictory ? 'Congrats!' : 'Game Over!';
-    gameModal.querySelector("p").innerHTML = `${modalText} <ol>${htmlWordList}</ol>`;
-    gameModal.classList.add("show");
-}
 const initGame = (button, clickedLetter) => {
+    // Set the topic based on the category and topic index
+    categoryElt = document.getElementById("changeCategoryDropDown");
+    topicElement = document.getElementById("changeTopicDropDown");
+
+    const curPhilosphy = philosophyData.filter(dataElt => dataElt.Name == topicElement.value)[0];
+    let currentWords = curPhilosphy.List ; // Making currentWord as random word
+    let currentWordsShort = currentWords.map(w => w.replaceAll(/\s*\(.*/gi, ""));
+
+
     // Checking if clickedLetter is exist on the currentWord
     if(allCorrectLetters.includes(clickedLetter.toLowerCase())){
         guessedCorrectLetters.push(clickedLetter.toLowerCase());        
@@ -136,6 +160,26 @@ const initGame = (button, clickedLetter) => {
     if(allCorrectLetters.length === guessedCorrectLetters.length) return gameOver(true);
 }
 
+const gameOver = (isVictory) => {
+    // Set the topic based on the category and topic index
+    categoryElt = document.getElementById("changeCategoryDropDown");
+    topicElement = document.getElementById("changeTopicDropDown");
+
+    const curPhilosphy = philosophyData.filter(dataElt => dataElt.Name == topicElement.value)[0];
+    let currentWords = curPhilosphy.List ; // Making currentWord as random word
+
+
+    // After game complete.. showing modal with relevant details
+    const modalText = isVictory ? `You found the correct answer:` : 'The answer was:';
+    const htmlWordList = currentWords.map(w => `<li>${w}</li>`).join("")
+    const imageNo = Math.floor(17 * guessedCorrectLetters.length / allCorrectLetters.length)
+
+    gameModal.querySelector("img").src = `../Assets/Images/${imageNo}.jpg`;
+    gameModal.querySelector("h4").innerText = isVictory ? 'Congrats!' : 'Game Over!';
+    gameModal.querySelector("p").innerHTML = `${modalText} <ol>${htmlWordList}</ol>`;
+    gameModal.classList.add("show");
+}
+
 // Creating keyboard buttons and adding event listeners
 const keyboardRowLetters = [
 "QWERTYUIOP",
@@ -156,18 +200,6 @@ keyboardRowLetters.forEach((letterRow) => {
     })
     keyboardDiv.appendChild(letterRowElt);    
 }) 
-
-/*
-//for (let i = 97; i <= 122; i++) {
-    const buttonLetter = String.fromCharCode(i)
-    const button = document.createElement("button");
-    button.classList.add("key");
-    button.innerText = buttonLetter;
-    button.id = `keyboard_${buttonLetter}`
-    keyboardDiv.appendChild(button);
-    button.addEventListener("click", (e) => initGame(e.target, buttonLetter));
-//}
-*/
 
 document.addEventListener('keyup', (event) => {
     console.log(event.key)
